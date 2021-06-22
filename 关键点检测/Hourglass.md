@@ -9,16 +9,16 @@
 - 因为长得像沙漏，故取名为Hourglass 
 - Hourglass结构是由对称的bottom-up和top-down两部分组成
 - (ps. 感觉就是U-Net用上了res结构)
-![Keypoint_Hourglass_Network](../picture/Keypoint/Hourglass_Network.png)
+![Keypoint_Hourglass_Network](../picture/keypoint/Hourglass_Network.png)
 ## Hourglass结构
-![Keypoint_Hourglass_Module](../picture/Keypoint/Hourglass_Module.png)
+![Keypoint_Hourglass_Module](../picture/keypoint/Hourglass_Module.png)
 - 设计目的: 为了捕捉每个尺度下的信息，既获得局部的特征又保留整体的姿态信息
 - bottom-up(高分辨率到低分辨率) max pooling
 - top-down(低分辨率到高分辨率) 最邻近插值
 - 输出：通过1×1卷积得到一个heatmap，通道数为Pose的个数
 
 ## 中继监督（inermediate Supervision）
-![Keypoint_Hourglass_Inermediate](../picture/Keypoint/Hourglass_InermediateSupervision.png)
+![Keypoint_Hourglass_Inermediate](../picture/keypoint/Hourglass_InermediateSupervision.png)
 
 - 每个级联预测一个heatmaps（图蓝色部分）
 - 整个网络使用了8个Hourglass,heatmaps与GT比对产生loss，最终8个loss相加
