@@ -8,15 +8,11 @@
 - 输出为5×C heatmaps 和 4×2 offset maps (中心点没有offset)
   
 
-
 ## 配对
 - 每个类别输出5个heatmaps, 通过检测峰值提取出5个heatmaps的关键点.
 - 通过4个极值点，计算几何中心.
 - 如果几何中心在center map 上高效应，则4个极值点为有效检测.
 - 作者通过暴力枚举方式，得到所有有效机制点对.
-
-
-
 
 
 ## 与CornetNet比较
